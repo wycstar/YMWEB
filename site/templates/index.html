@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云觅</title>
+    <link href={{url_for('static', filename='css/index_style.css')}} rel="stylesheet">
+    <link href={{url_for('static', filename='css/public.css')}} rel="stylesheet">
+    <script type="text/javascript" src={{url_for('static', filename='js/jquery.min.js')}}></script>
+    <script type="text/javascript" src={{url_for('static', filename='js/index_js.js')}}></script> 
+</head>
+<body>
+	<!--[if lt IE 10]>
+        <style type="text/css">*{display:none}</style>
+        <script language="javascript">
+            window.location.href="/killIE";
+        </script>
+    <![endif]-->
+    <div id="top-nav">
+        <div class="top-nav-item">
+            <ul>
+                <li><a href="#">网页</a></li>
+                <li><a href="#">图片</a></li>
+                <li><a href="#">磁链</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <img src={{url_for('static', filename='pic/logo.png')}} class="logo">
+        <form method="POST">
+            {{form.hidden_tag()}}
+            <span class="form-input-wrapper" id="main-input">
+                {{form.keyword(class="key-input")}}
+            </span>
+            <span class="form-submit-wrapper" id="main-button">
+                {{form.submit(class="key-submit")}}
+            </span>
+            </div>
+        </form>
+    </div>
+    <div id="foot" style="position:absolute;">
+        <span class="foot-left-zone">
+            <a href="http://www.whks.me/" target="blank">作者博客</a>
+            <a href="http://www.weibo.com/yczone" target="blank">作者微博</a>
+        </span>
+        <span class="foot-right-zone">
+            <a href="http://www.whks.me/" target="blank">隐私声明</a>
+            <a href="http://www.weibo.com/yczone" target="blank">设置</a>
+        </span>
+    </div>
+	<div style="display:none">
+	<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1257619253'%3E%3C/span%3E%3Cscript src='" + "https://s11.cnzz.com/stat.php%3Fid%3D1257619253' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>
+</body>
+</html>

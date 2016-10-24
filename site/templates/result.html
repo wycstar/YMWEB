@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{keyword}}-搜索结果</title>
+    <link href={{url_for('static', filename='css/result_style.css')}} rel="stylesheet">
+    <link href={{url_for('static', filename='css/public.css')}} rel="stylesheet">
+    <script type="text/javascript" src={{url_for('static', filename='js/jquery.min.js')}}></script>
+    <script type="text/javascript" src={{url_for('static', filename='js/result_js.js')}}></script>
+</head>
+<body>
+    <!--[if lt IE 10]>
+        <style type="text/css">*{display:none}</style>
+        <script language="javascript">
+            window.location.href="killIE.html";
+        </script>
+    <![endif]-->
+    <div id="top-nav">
+        <span class="top-logo-wrapper">
+            <a href="http://yunmi.me"><img src={{url_for('static', filename='pic/logo-small-white.png')}}></a>
+        </span>
+        <form id="top-form" method="POST">
+            {{queryForm.hidden_tag()}}
+            {{queryForm.keyword(class="key-input")}}
+            {{queryForm.submit(class="key-submit")}}
+        </form>
+    </div>
+    <div class="content-wrapper" id="web-zone">
+        <div class="result-total">
+            <p>云觅为您找到{{resultNum}}条结果,用时{{resultTime}}秒,以下为第{{currentPage}}页。</p>
+        </div>
+        <div class="result-top-sep">&nbsp;</div>
+        {% for result in webResultSet %}
+        <div class="result-item">
+            <h3 class="result-item-title"><a href={{result['link']}} class="result-title-link" target="blank">
+                {% autoescape false %}
+                {{result['title']}}
+                {% endautoescape %}
+            </a></h3>
+            <div class="result-item-abstract">
+                {% autoescape false %}
+                {{result['abstract']}}
+                {% endautoescape %}
+            </div>
+            <p class="result-item-cite">{% autoescape false %}{{result['cite']}}{% endautoescape %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="result-extra" id="zhihu-zone">
+        <h3 class='result-extra-title'>觅带逛</h3>
+        {% for result in zhihuResultSet %}
+        <div class='result-extra-item'>
+            <span class="result-extra-item-thumb">
+                <img src={{result['thumb']}} width="66" style="overflow:hidden">
+            </span>
+            <div class="result-extra-item-content">
+                {% autoescape false %}
+                <div class="result-extra-item-title text-title"><a href={{result['link']}} class="result-title-link" target="blank">{{result['title']|safe}}</a>
+                </div>
+                <div class="result-extra-item-title text-info">回答者:{{result['author']}}</div>
+                <div class="result-extra-item-title text-info">{{result['like']}}<img src={{url_for('static', filename='pic/thumb.png')}} width="16"></div>
+                {% endautoescape %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="result-page-wrapper">
+             <ul id="pager-nav" style="list-style:none">
+                 <li>
+                    {% if currentPage== 1 %}
+                    <a href="#" id="pager-nav-left" style="visibility:hidden;">&nbsp;</a>
+                    {% else %}
+                    <a href="/s/{{keyword}}/{{currentPage - 1}}" id="pager-nav-left">&nbsp;</a>
+                    {% endif %}
+                 </li>
+                 {% for page in range(10)%}
+                 <li>
+                    {% if currentPage >= 7 %}
+                    {% if page == 5 %}
+                    <a href="/s/{{keyword}}/{{currentPage + page - 5}}" class="pager-current">{{currentPage + page - 5}}</a>
+                    {% else %}
+                    <a href="/s/{{keyword}}/{{currentPage + page - 5}}">{{currentPage + page - 5}}</a>
+                    {% endif %}
+                    {% else %}
+                    {% if page + 1 == currentPage %}
+                    <a href="/s/{{keyword}}/{{page + 1}}" class="pager-current">{{page + 1}}</a>
+                    {% else %}
+                    <a href="/s/{{keyword}}/{{page + 1}}">{{page + 1}}</a>
+                    {% endif %}
+                    {% endif %}
+                 </li>
+                 {% endfor %}
+                 <li>
+                    <a href="/s/{{keyword}}/{{currentPage + 1}}" id="pager-nav-right">&nbsp;</a>
+                 </li>
+             </ul>
+        </div>
+        <div id="foot">
+        <span class="foot-left-zone">
+            <a href="http://www.whks.me/" target="blank">作者博客</a>
+            <a href="http://www.weibo.com/yczone" target="blank">作者微博</a>
+        </span>
+        <span class="foot-right-zone">
+            <a href="http://www.whks.me/" target="blank">隐私声明</a>
+            <a href="http://www.weibo.com/yczone" target="blank">设置</a>
+        </span>
+		<div style="display:none">
+		<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1257619253'%3E%3C/span%3E%3Cscript src='" + "https://s11.cnzz.com/stat.php%3Fid%3D1257619253' type='text/javascript'%3E%3C/script%3E"));</script>
+		</div>
+    </div>
+</body>
+</html>

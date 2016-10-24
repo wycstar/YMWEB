@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>不欢迎IE(ver < 11)浏览器访问本站</title>
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/killIE_style.css')}}>
+</head>
+<body>
+    <div class="middle">
+        <div class="tip-refuse">
+            傲娇的拒绝IE浏览器的浏览！
+        </div>
+        <div class="pic-wrapper">
+            <a href="https://www.google.com/chrome/browser/desktop/">
+                <img class="image-left" src={{url_for('static', filename='pic/chrome.png')}}>
+            </a>
+            <a href="http://www.firefox.com.cn/">
+                <img src={{url_for('static', filename='pic/firefox.png')}}>
+            </a>
+            <a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">
+                <img class="image-right" src={{url_for('static', filename='pic/spartan.png')}}>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

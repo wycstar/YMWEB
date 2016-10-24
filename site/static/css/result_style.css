@@ -1,0 +1,222 @@
+em{
+    color: #c62828 !important;
+    font-style: normal;
+}
+.text-upper{vertical-align: top;}
+.text-center{vertical-align: middle;}
+.text-bottom{vertical-align: bottom;}
+.text-title{color: #333 !important;}
+.text-info{color: #999  !important;}
+body{
+    min-width: 1100px;
+}
+#top-nav{
+    width:100%;
+    background-color: #303541;
+    position: fixed;
+    height: 60px;
+    top:0px;
+    min-width: 670px;
+    box-shadow: 0px 1px 4px #303541;
+    z-index: 99;
+}
+.top-logo-wrapper{
+    margin-left: 5px;
+    display: inline-block;
+}
+#top-form{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    width:500px;
+}
+input:focus{
+    border:#1abc9c 1px solid !important;
+    border-right: transparent !important;
+    box-shadow: 0 0 3px #1abc9c;
+}
+.key-input{
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 5px;
+    float: left;
+    margin-top: 9px;
+    height: 40px;
+    width: 395px;
+    border-radius: 4px 0px 0px 4px;
+    border:white 1px solid;
+    border-right: transparent !important;
+    font-size: 18px;
+    line-height: 40px;
+    box-shadow: 0px 0px 5px #e7e7e7 inset;
+    background-color: white;
+    transition: 0.3s;
+}
+.key-submit{
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin-top: 9px;
+    width: 98px;
+    height: 42px;
+    background: transparent;
+    background-color: #1abc9c;
+    border: none;
+    box-shadow: none;
+    color:white;
+    font-size: 18px;
+    cursor:pointer;
+}
+.key-submit-hover{
+    background-color: #15b797 !important;
+}
+.content-wrapper{
+    margin-left: 150px;
+    margin-top: 80px;
+    width: 540px;
+    min-height: 300px;
+    overflow: hidden;
+}
+.result-total{
+    height: 30px;
+    color: #808080;
+    font-size: 15px;
+    line-height: 30px;
+}
+.result-top-sep{
+    background-color:rgba(0,0,0,0.07);
+    height: 1px;
+    width: 100%;
+    margin-top: 13px;
+}
+.result-item{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    height: auto;
+}
+.result-item a:link{
+    color: #039be5;
+}
+.result-item a:visited{
+    color: #600090;
+}
+.result-item-title{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #039be5;
+    font-size: 18px;
+}
+.result-item-abstract{
+    height: auto;
+    word-break: break-all;
+    line-height: 1.5;
+    color: #333;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.result-item-cite{
+    color: #388e3c;
+    font-size: 15px;
+    margin-top: 3px;
+    line-height: 1.5;
+}
+.result-title-link{
+    text-decoration: none;
+}
+.result-extra{
+    position: absolute;
+    top: 120px;
+    left: 750px;
+}
+.result-extra-fixed{
+    position: fixed !important;
+    top: 70px !important;
+    left: 750px;
+}
+#zhihu-zone a:link{
+    color: #039be5;
+}
+#zhihu-zone a:visited{
+    color: #600090;
+}
+.result-extra-title{
+    color: #555;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.result-extra-item{
+    width: 330px;
+    height: 66px;
+    margin-bottom: 15px;
+}
+.result-extra-item-thumb{
+    display: block;
+    float:left;
+    width: 66px;
+}
+.result-extra-item-content{
+    float: left;
+    width: 264px;
+}
+.result-extra-item-title{
+    padding-left: 8px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    height: 22px;
+}
+.result-page-wrapper{
+    padding-top: 10px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+}
+.result-page-wrapper li{
+    display: inline-block;
+}
+.result-page-wrapper a{
+    display: inline-block;
+    zoom: 1;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: transparent;
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.pager-current{
+    pointer-events: none;
+    font-size: 22px;
+}
+#pager-nav-left{
+    background: url("../pic/arrow-left-static.png");
+}
+.pager-nav-left-hover{
+    background: url("../pic/arrow-left-active.png") !important;
+}
+#pager-nav-right{
+    background: url("../pic/arrow-right-static.png");
+}
+.pager-nav-right-hover{
+    background: url("../pic/arrow-right-active.png") !important;
+}
+.hide{visibility: hidden;}
+.result-page-wrapper a:link{
+
+}
+.result-page-wrapper a:visited{
+    
+}
+.result-page-wrapper a:not(#pager-nav-left):not(#pager-nav-right):not(.pager-current):hover{
+    background-color: #ee6e73;
+    color:white;
+}
+.result-page-wrapper a:active{
+
+}
